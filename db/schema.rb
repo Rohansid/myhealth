@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513024246) do
+ActiveRecord::Schema.define(version: 20150519011459) do
+
+  create_table "allergies", force: :cascade do |t|
+    t.text     "allergy_type"
+    t.text     "allergen"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "allergies_users", force: :cascade do |t|
+    t.integer "allergy_id"
+    t.integer "user_id"
+  end
 
   create_table "check_allergies", force: :cascade do |t|
     t.text     "allergy"
@@ -19,6 +31,13 @@ ActiveRecord::Schema.define(version: 20150513024246) do
     t.text     "allergyreaction"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.text     "username"
+    t.text     "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
