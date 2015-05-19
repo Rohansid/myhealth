@@ -1,0 +1,10 @@
+<h1>These are your allergies</h1>
+
+  <% @allergies.map do |allergy| %>
+    <%= allergy[:type] %>
+    <%= allergy[:allergen] %>
+    <%= puts %>
+  <% end %>  
+
+
+
