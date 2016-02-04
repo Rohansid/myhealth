@@ -1,7 +1,7 @@
 class AllergiesController < ApplicationController
 
   def index
-    client = ManaCloud.new('test4', 'test1234')
+    client = ManaCloud.new('ijones', 'mana')
     @allergies =  []
 
     client.allergies.map do |record|
